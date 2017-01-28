@@ -1,5 +1,4 @@
 ﻿using RegistroCategoriasPeliculas.DAL;
-using RegistroCategoriasPeliculas.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,19 +10,24 @@ using System.Windows.Forms;
 
 namespace RegistroCategoriasPeliculas.UI.Consultas
 {
-    public partial class FrmConsultaUsuarios : Form
+    public partial class FrmConsultaPeliculas : Form
     {
-        public FrmConsultaUsuarios()
+        public FrmConsultaPeliculas()
         {
             InitializeComponent();
         }
 
-        private void FrmConsultaUsuarios_Load(object sender, EventArgs e)
+        private void PeliculasDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmConsultaPeliculas_Load(object sender, EventArgs e)
         {
             try
             {
-                PeliculasDb db = new PeliculasDb();
-                UsuariosDataGridView.DataSource = db.Usuarios.ToList();
+                var db = new PeliculasDb();
+                PeliculasDataGridView.DataSource = db.Peliculas.ToList();
             }
             catch(Exception E)
             {

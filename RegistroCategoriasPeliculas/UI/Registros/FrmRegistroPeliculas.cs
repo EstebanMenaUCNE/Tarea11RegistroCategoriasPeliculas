@@ -44,7 +44,25 @@ namespace RegistroCategoriasPeliculas.UI.Registros
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            //Pelicula pelicula = new Pelicula(EstrenoDateTimePicker., string descripcion, );
+            try
+            {
+                Pelicula pelicula = new Pelicula(EstrenoDateTimePicker.Value, DescripcionTextBox.Text, new Categoria("Sin Categoria"));
+                var db = new PeliculasDb();
+                db.Peliculas.Add(pelicula);
+                db.SaveChanges();
+                MessageBox.Show("Guardado con éxito!");
+            }
+            catch(Exception E)
+            {
+                MessageBox.Show(E.ToString());
+            }
+            
+        }
+
+        private void NuevoButton_Click(object sender, EventArgs e)
+        {
+            IdTextBox.Text = "";
+            DescripcionTextBox.Text = "";
         }
     }
 }

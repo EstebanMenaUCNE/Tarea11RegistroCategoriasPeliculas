@@ -52,5 +52,10 @@ namespace RegistroCategoriasPeliculas
         {
             new FrmConsultaUsuarios().Show();
         }
+
+        private void películasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new FrmConsultaPeliculas().Show();
+        }
     }
 }

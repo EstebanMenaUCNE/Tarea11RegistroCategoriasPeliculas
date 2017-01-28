@@ -93,21 +93,21 @@
             // categoríaToolStripMenuItem
             // 
             this.categoríaToolStripMenuItem.Name = "categoríaToolStripMenuItem";
-            this.categoríaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoríaToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.categoríaToolStripMenuItem.Text = "Categorías";
             this.categoríaToolStripMenuItem.Click += new System.EventHandler(this.categoríaToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // películasToolStripMenuItem
             // 
             this.películasToolStripMenuItem.Name = "películasToolStripMenuItem";
-            this.películasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.películasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.películasToolStripMenuItem.Text = "Películas";
             this.películasToolStripMenuItem.Click += new System.EventHandler(this.películasToolStripMenuItem_Click);
             // 
@@ -140,6 +140,7 @@
             this.películasToolStripMenuItem1.Name = "películasToolStripMenuItem1";
             this.películasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.películasToolStripMenuItem1.Text = "Películas";
+            this.películasToolStripMenuItem1.Click += new System.EventHandler(this.películasToolStripMenuItem1_Click);
             // 
             // ayudaToolStripMenuItem
             // 

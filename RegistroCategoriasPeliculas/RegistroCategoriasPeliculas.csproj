@@ -91,6 +91,12 @@
     <Compile Include="UI\Consultas\FrmConsultaCategorias.Designer.cs">
       <DependentUpon>FrmConsultaCategorias.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\FrmConsultaPeliculas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\FrmConsultaPeliculas.Designer.cs">
+      <DependentUpon>FrmConsultaPeliculas.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Consultas\FrmConsultaUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Consultas\FrmConsultaCategorias.resx">
       <DependentUpon>FrmConsultaCategorias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\FrmConsultaPeliculas.resx">
+      <DependentUpon>FrmConsultaPeliculas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\FrmConsultaUsuarios.resx">
       <DependentUpon>FrmConsultaUsuarios.cs</DependentUpon>

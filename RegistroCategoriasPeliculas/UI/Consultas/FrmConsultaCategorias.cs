@@ -23,10 +23,8 @@ namespace RegistroCategoriasPeliculas.UI.Consultas
         {
             try
             {
-                List<Categoria> categorias = new List<Categoria>();
                 var db = new PeliculasDb();
-                categorias = db.Categorias.ToList();
-                CategoriasDataGridView.DataSource = categorias;
+                CategoriasDataGridView.DataSource = db.Categorias.ToList();
             }
             catch(Exception E)
             {

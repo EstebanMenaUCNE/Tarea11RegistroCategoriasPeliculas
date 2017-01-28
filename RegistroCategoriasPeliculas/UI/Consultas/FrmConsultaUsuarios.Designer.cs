@@ -37,14 +37,14 @@
             this.UsuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsuariosDataGridView.Location = new System.Drawing.Point(22, 55);
             this.UsuariosDataGridView.Name = "UsuariosDataGridView";
-            this.UsuariosDataGridView.Size = new System.Drawing.Size(240, 150);
+            this.UsuariosDataGridView.Size = new System.Drawing.Size(398, 150);
             this.UsuariosDataGridView.TabIndex = 1;
             // 
             // FrmConsultaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(447, 261);
             this.Controls.Add(this.UsuariosDataGridView);
             this.Name = "FrmConsultaUsuarios";
             this.Text = "Consulta de Usuarios";

@@ -88,6 +88,7 @@
             this.NuevoButton.TabIndex = 22;
             this.NuevoButton.Text = "Nuevo";
             this.NuevoButton.UseVisualStyleBackColor = true;
+            this.NuevoButton.Click += new System.EventHandler(this.NuevoButton_Click);
             // 
             // DescripcionTextBox
             // 
@@ -142,6 +143,7 @@
             // 
             // CategoriaComboBox
             // 
+            this.CategoriaComboBox.DisplayMember = "Descripcion";
             this.CategoriaComboBox.FormattingEnabled = true;
             this.CategoriaComboBox.Location = new System.Drawing.Point(100, 161);
             this.CategoriaComboBox.Name = "CategoriaComboBox";

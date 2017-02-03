@@ -111,6 +111,7 @@
             this.BuscarButton.TabIndex = 7;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // FrmRegistroCategorias
             // 
@@ -127,6 +128,7 @@
             this.Controls.Add(this.IdLabel);
             this.Name = "FrmRegistroCategorias";
             this.Text = "Registro de Categorias";
+            this.Load += new System.EventHandler(this.FrmRegistroCategorias_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,5 @@
-﻿using RegistroCategoriasPeliculas.DAL;
+﻿using RegistroCategoriasPeliculas.BLL;
+using RegistroCategoriasPeliculas.DAL;
 using RegistroCategoriasPeliculas.Entidades;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,21 @@ namespace RegistroCategoriasPeliculas.UI.Registros
             InitializeComponent();
         }
 
+        public bool Validar()
+        {
+            if (string.IsNullOrEmpty(DescripcionTextBox.Text))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void Limpiar()
+        {
+            IdTextBox.Clear();
+            DescripcionTextBox.Clear();
+        }
+
         private void IdLabel_Click(object sender, EventArgs e)
         {
 
@@ -25,30 +41,55 @@ namespace RegistroCategoriasPeliculas.UI.Registros
 
         private void NuevoButton_Click(object sender, EventArgs e)
         {
-            IdTextBox.Text = "";
-            DescripcionTextBox.Text = "";
+            Limpiar();
+            DescripcionTextBox.Focus();
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            try
+            Categoria categoria = new Categoria(DescripcionTextBox.Text);
+            if (Validar())
             {
-                Categoria categoria = new Categoria(DescripcionTextBox.Text);
-                var db = new PeliculasDb();
-                db.Categorias.Add(categoria);
-                db.SaveChanges();
+                MessageBox.Show("Hay campos vacios...");
+            }
+            else if (CategoriaBLL.Guardar(categoria))
+            {
                 MessageBox.Show("Guardado con éxito!");
             }
-            catch(Exception E)
+            Limpiar();
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(IdTextBox.Text))
             {
-                MessageBox.Show(E.ToString());
+                Categoria categoria = CategoriaBLL.Buscar(Convert.ToInt32(IdTextBox.Text));
+                if(categoria != null)
+                {
+                    DescripcionTextBox.Text = categoria.Descripcion;
+                }
+                else
+                {
+                    MessageBox.Show("No encontrado...");
+                }
             }
-            
         }
 
         private void ElimiarButton_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Funcion no disponible...");
         }
+        
+        private void FrmRegistroCategorias_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmRegistroCategorias_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

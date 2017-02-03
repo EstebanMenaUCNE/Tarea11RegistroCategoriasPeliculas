@@ -68,6 +68,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\CategoriaBLL.cs" />
+    <Compile Include="BLL\PeliculaBLL.cs" />
+    <Compile Include="BLL\UsuarioBLL.cs" />
     <Compile Include="DAL\PeliculasDb.cs" />
     <Compile Include="Entidades\Categoria.cs" />
     <Compile Include="Entidades\Pelicula.cs" />
@@ -184,7 +187,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="BLL\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>

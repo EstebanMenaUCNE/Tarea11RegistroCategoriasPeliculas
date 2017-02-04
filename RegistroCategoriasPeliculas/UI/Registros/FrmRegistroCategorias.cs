@@ -48,7 +48,7 @@ namespace RegistroCategoriasPeliculas.UI.Registros
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             Categoria categoria = new Categoria(DescripcionTextBox.Text);
-            if (Validar())
+            if (!Validar())
             {
                 MessageBox.Show("Hay campos vacios...");
             }
@@ -77,7 +77,16 @@ namespace RegistroCategoriasPeliculas.UI.Registros
 
         private void ElimiarButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Funcion no disponible...");
+            if (!string.IsNullOrEmpty(IdTextBox.Text))
+            {
+                Categoria categoria = CategoriaBLL.Buscar(Convert.ToInt32(IdTextBox.Text));
+                if (categoria != null)
+                {
+                    if(CategoriaBLL.Eliminar(categoria))
+                        MessageBox.Show("Eliminado con éxito!");
+                }
+                Limpiar();
+            }
         }
         
         private void FrmRegistroCategorias_Load(object sender, EventArgs e)

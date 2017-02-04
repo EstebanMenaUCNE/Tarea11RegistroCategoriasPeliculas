@@ -48,6 +48,7 @@
             this.BuscarButton.TabIndex = 15;
             this.BuscarButton.Text = "Buscar";
             this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
             // ElimiarButton
             // 
@@ -147,6 +148,7 @@
             this.Controls.Add(this.IdLabel);
             this.Name = "FrmRegistroUsuarios";
             this.Text = "Registro de Usuarios";
+            this.Load += new System.EventHandler(this.FrmRegistroUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,5 @@
-﻿using RegistroCategoriasPeliculas.DAL;
+﻿using RegistroCategoriasPeliculas.BLL;
+using RegistroCategoriasPeliculas.DAL;
 using RegistroCategoriasPeliculas.Entidades;
 using System;
 using System.Collections.Generic;
@@ -18,31 +19,75 @@ namespace RegistroCategoriasPeliculas.UI.Registros
             InitializeComponent();
         }
 
+        public bool Validar()
+        {
+            if (string.IsNullOrEmpty(NombreTextBox.Text) || string.IsNullOrEmpty(ClaveTextBox.Text))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public void Limpiar()
+        {
+            IdTextBox.Clear();
+            NombreTextBox.Clear();
+            ClaveTextBox.Clear();
+        }
+
         private void NuevoButton_Click(object sender, EventArgs e)
         {
-            IdTextBox.Text = "";
-            NombreTextBox.Text = "";
-            ClaveTextBox.Text = "";
+            Limpiar();
+            NombreTextBox.Focus();
         }
 
         private void ElimiarButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Función no disponible...");
+            if (!string.IsNullOrEmpty(IdTextBox.Text))
+            {
+                Usuario usuario = UsuarioBLL.Buscar(Convert.ToInt32(IdTextBox.Text));
+                if (usuario != null)
+                {
+                    if (UsuarioBLL.Eliminar(usuario))
+                        MessageBox.Show("Eliminado con éxito!");
+                }
+                Limpiar();
+            }
         }
 
         private void GuardarButton_Click(object sender, EventArgs e)
         {
-            try
+            Usuario usuario = new Usuario(NombreTextBox.Text, ClaveTextBox.Text);
+            if (!Validar())
             {
-                Usuario usuario = new Usuario(NombreTextBox.Text, ClaveTextBox.Text);
-                PeliculasDb db = new PeliculasDb();
-                db.Usuarios.Add(usuario);
-                db.SaveChanges();
+                MessageBox.Show("Hay campos vacios...");
+            }
+            else if (UsuarioBLL.Guardar(usuario))
+            {
                 MessageBox.Show("Guardado con éxito!");
             }
-            catch (Exception E)
+            Limpiar();
+        }
+
+        private void FrmRegistroUsuarios_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuscarButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(IdTextBox.Text))
             {
-                MessageBox.Show(E.ToString());
+                Usuario usuario = UsuarioBLL.Buscar(Convert.ToInt32(IdTextBox.Text));
+                if (usuario != null)
+                {
+                    NombreTextBox.Text = usuario.Nombre;
+                    ClaveTextBox.Text = usuario.Clave;
+                }
+                else
+                {
+                    MessageBox.Show("No encontrado...");
+                }
             }
         }
     }

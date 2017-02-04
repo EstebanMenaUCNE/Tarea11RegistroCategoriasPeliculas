@@ -69,6 +69,7 @@
             this.ElimiarButton.TabIndex = 24;
             this.ElimiarButton.Text = "Eliminar";
             this.ElimiarButton.UseVisualStyleBackColor = true;
+            this.ElimiarButton.Click += new System.EventHandler(this.ElimiarButton_Click);
             // 
             // GuardarButton
             // 

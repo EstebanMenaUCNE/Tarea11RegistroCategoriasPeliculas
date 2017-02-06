@@ -54,7 +54,7 @@
             this.ayudaToolStripMenuItem});
             this.PrincipalMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.PrincipalMenuStrip.Name = "PrincipalMenuStrip";
-            this.PrincipalMenuStrip.Size = new System.Drawing.Size(481, 24);
+            this.PrincipalMenuStrip.Size = new System.Drawing.Size(478, 24);
             this.PrincipalMenuStrip.TabIndex = 0;
             this.PrincipalMenuStrip.Text = "menuStrip1";
             // 
@@ -124,21 +124,21 @@
             // categoríasToolStripMenuItem
             // 
             this.categoríasToolStripMenuItem.Name = "categoríasToolStripMenuItem";
-            this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.categoríasToolStripMenuItem.Text = "Categorías";
             this.categoríasToolStripMenuItem.Click += new System.EventHandler(this.categoríasToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem1
             // 
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
             // 
             // películasToolStripMenuItem1
             // 
             this.películasToolStripMenuItem1.Name = "películasToolStripMenuItem1";
-            this.películasToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.películasToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
             this.películasToolStripMenuItem1.Text = "Películas";
             this.películasToolStripMenuItem1.Click += new System.EventHandler(this.películasToolStripMenuItem1_Click);
             // 
@@ -152,7 +152,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 324);
+            this.ClientSize = new System.Drawing.Size(478, 324);
             this.Controls.Add(this.PrincipalMenuStrip);
             this.MainMenuStrip = this.PrincipalMenuStrip;
             this.Name = "FrmMain";
